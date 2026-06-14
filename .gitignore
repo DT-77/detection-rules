@@ -1,0 +1,27 @@
+# ── Validation artifacts (regenerated locally, never committed) ────────────
+reports/
+*.yarc
+*.log
+
+# Synthetic PCAPs are reproducible from tests/generators/*.py — do not commit blobs
+tests/pcaps/*.pcap
+!tests/pcaps/.gitkeep
+
+# Generated rule index is committed by the pre-commit hook, but transient temp copies are not
+metadata/*.tmp
+*.combined.rules
+*.combined.yar
+
+# Generated dashboard (regenerated from dashboard/template.html by Build-Dashboard.ps1)
+dashboard/index.html
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Claude Code local session/settings (not part of the deliverable)
+.claude/

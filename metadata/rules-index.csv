@@ -1,0 +1,6 @@
+﻿"engine","scope","file","id","name","classtype","metadata"
+"snort","staging","rules/snort/staging/selftest.rules","9000001","DRL FUNCTIONAL TCP PAYLOAD MARKER","policy-violation","author detection-rules-lab, created 2026_06_14"
+"snort","staging","rules/snort/staging/selftest.rules","9000002","DRL FUNCTIONAL HTTP URI MARKER","policy-violation","author detection-rules-lab, created 2026_06_14"
+"suricata","staging","rules/suricata/staging/selftest.rules","9000001","DRL FUNCTIONAL TCP PAYLOAD MARKER","policy-violation","stage staging, author detection-rules-lab, created 2026_06_14, mitre_technique T1071_001"
+"suricata","staging","rules/suricata/staging/selftest.rules","9000002","DRL FUNCTIONAL HTTP URI MARKER","policy-violation","stage staging, author detection-rules-lab, created 2026_06_14, mitre_technique T1071_001"
+"yara","staging","rules/yara/staging/selftest.yar","DRL_Benign_TP_Marker","Benign true-positive marker for functional validation","informational","author=detection-rules-lab"

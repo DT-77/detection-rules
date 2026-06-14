@@ -1,0 +1,31 @@
+# Convenience build definitions for the four validator images.
+# Usage (from repo root):
+#   docker compose -f docker/docker-compose.yml build
+# These services are build-only; the validation scripts run short-lived
+# `docker run --rm --network none` containers, not long-running services.
+name: detection-rules-lab
+
+services:
+  snort:
+    image: drl/snort3:local
+    build:
+      context: ./snort
+      dockerfile: Dockerfile
+
+  suricata:
+    image: drl/suricata:local
+    build:
+      context: ./suricata
+      dockerfile: Dockerfile
+
+  yara:
+    image: drl/yara:local
+    build:
+      context: ./yara
+      dockerfile: Dockerfile
+
+  pcapgen:
+    image: drl/pcapgen:local
+    build:
+      context: ./pcapgen
+      dockerfile: Dockerfile

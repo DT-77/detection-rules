@@ -1,0 +1,7 @@
+# =============================================================================
+# INTENTIONALLY BROKEN rule — used ONLY by RUN-DEMO.bat to prove the validator
+# rejects bad rules. It lives in tests/fixtures (NOT under rules/) so it is never
+# loaded by normal validation or the pre-commit hook. Do not "fix" it.
+# 'this_is_not_a_real_keyword' is not a Suricata keyword, so `suricata -T` fails.
+# =============================================================================
+alert tcp any any -> any any (msg:"DRL DEMO BROKEN RULE"; this_is_not_a_real_keyword:foo; sid:9009999; rev:1;)

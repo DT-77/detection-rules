@@ -1,0 +1,4 @@
+detection-rules-lab YARA negative-control sample (benign, no marker).
+This file MUST NOT match DRL_Benign_TP_Marker. It is used to catch overly-broad
+rules that would generate false positives on clean data.
+The quick brown fox jumps over the lazy dog. 0123456789.

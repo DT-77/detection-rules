@@ -1,0 +1,2 @@
+# rules-index.csv is (re)generated here by scripts/Update-RuleIndex.ps1
+# and committed by the pre-commit hook so the catalog never drifts from the rules.

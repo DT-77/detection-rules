@@ -1,0 +1,24 @@
+{
+  "_comment": "Maps test telemetry to the detections it MUST (and must not) produce. Consumed by scripts/Test-Functional.ps1.",
+  "suricata": [
+    {
+      "pcap": "http_test.pcap",
+      "required_sids": [9000001],
+      "bonus_sids": [9000002]
+    }
+  ],
+  "snort": [
+    {
+      "pcap": "http_test.pcap",
+      "required_sids": [9000001],
+      "bonus_sids": [9000002]
+    }
+  ],
+  "yara": [
+    {
+      "rule": "DRL_Benign_TP_Marker",
+      "must_match": ["benign_marker_sample.txt"],
+      "must_not_match": ["clean_negative_sample.txt"]
+    }
+  ]
+}

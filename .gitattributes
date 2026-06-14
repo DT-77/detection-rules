@@ -1,0 +1,30 @@
+# Normalize line endings so files mounted into Linux containers always use LF.
+# This is critical: a CRLF in the Git pre-commit hook or in a .rules/.yar/.lua
+# file makes Snort/Suricata/YARA throw cryptic parse errors inside the container.
+
+* text=auto eol=lf
+
+# Windows-native tooling keeps CRLF
+*.ps1   text eol=crlf
+*.psd1  text eol=crlf
+*.psm1  text eol=crlf
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+
+# Engine-consumed files MUST be LF
+*.rules text eol=lf
+*.yar   text eol=lf
+*.yara  text eol=lf
+*.lua   text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.py    text eol=lf
+*.sh    text eol=lf
+*.conf  text eol=lf
+.githooks/pre-commit text eol=lf
+.githooks/pre-push   text eol=lf
+
+# Binary artifacts
+*.pcap  binary
+*.pcapng binary
+*.yarc  binary

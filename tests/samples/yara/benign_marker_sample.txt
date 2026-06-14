@@ -1,0 +1,7 @@
+detection-rules-lab YARA functional-test sample (benign).
+This file exists only to confirm that DRL_Benign_TP_Marker matches.
+
+marker-token: DRL_BENIGN_TP_MARKER_v1
+
+Nothing in this file is malicious. A neutral marker is used in place of the
+EICAR test string so that host antivirus does not delete this fixture.
