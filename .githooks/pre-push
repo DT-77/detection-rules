@@ -1,0 +1,19 @@
+#!/bin/sh
+# =============================================================================
+# detection-rules-lab pre-push gate (heavier).
+# Runs FULL syntax + functional validation (PCAP replay + YARA matching) before
+# code leaves the workstation. Comment out if your team prefers a CI-local stage.
+# =============================================================================
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+if command -v pwsh >/dev/null 2>&1; then
+    PS_BIN="pwsh"
+else
+    PS_BIN="powershell.exe"
+fi
+
+"$PS_BIN" -NoProfile -ExecutionPolicy Bypass \
+    -File "$REPO_ROOT/scripts/Invoke-Validation.ps1" -Full
+exit $?

@@ -1,0 +1,7 @@
+# Disable empty issues so reporters pick a template.
+blank_issues_enabled: false
+contact_links:
+  # NOTE: replace OWNER/REPO below with your GitHub path after creating the repo.
+  - name: Report a security vulnerability (private)
+    url: https://github.com/OWNER/REPO/security/advisories/new
+    about: Do not open a public issue for security problems. Report privately here. See SECURITY.md.

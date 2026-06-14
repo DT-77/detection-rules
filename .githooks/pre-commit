@@ -1,0 +1,21 @@
+#!/bin/sh
+# =============================================================================
+# detection-rules-lab pre-commit gate.
+# Git for Windows runs hooks with its bundled POSIX sh, so this shim simply
+# delegates to the PowerShell orchestrator, which blocks the commit on any
+# syntax (or YARA functional) failure in STAGED rule files.
+# =============================================================================
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+# Prefer PowerShell 7+ (pwsh); fall back to Windows PowerShell.
+if command -v pwsh >/dev/null 2>&1; then
+    PS_BIN="pwsh"
+else
+    PS_BIN="powershell.exe"
+fi
+
+"$PS_BIN" -NoProfile -ExecutionPolicy Bypass \
+    -File "$REPO_ROOT/scripts/Invoke-Validation.ps1" -PreCommit
+exit $?
